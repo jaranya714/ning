@@ -42,5 +42,10 @@ if classifier == 'random forest':
   y_pred = rf.predict(x_test)
   acc = accuracy_score(y_test, y_pred)
   st.write(acc)
-
+ if classifier == 'Neural Network':
+  nn = MLPClassifier(hidden_layer_sizes=(10, 10), max_iter=1000)
+  nn.fit(x_train, y_train)
+  y_pred = nn.predict(x_test)
+  acc = accuracy_score(y_test, y_pred)
+  st.write(acc)
 
